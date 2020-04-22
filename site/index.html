@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Главная страница</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <style type="text/css">
+            * {
+                font-family: 'Roboto', sans-serif;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #fff;
+            }
+
+            #main {
+                display: grid;
+                grid-template-rows: 100px 960px auto 80px;
+            }
+
+            #header {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                left: 0px;
+                top: 0px;
+                background: #EBEBEB;
+            }
+
+            #header #logo {
+                position: absolute;
+                width: 220px;
+                height: 60px;
+                left: 100px;
+                top: 20px;
+                border-radius: 8px;
+            }
+
+            #header ul {
+                padding-top: 27px;
+                text-align: right;
+
+            }
+
+            #header ul li {
+                font-size: 24px;
+                line-height: 28px;
+                display: inline;
+                padding-left: 10px;
+            }
+
+            #auth {
+                background: #4F4F4F;
+                border: 4px solid #828282;
+                box-sizing: border-box;
+                border-radius: 6px;
+                display: inline;
+                padding: 10px;
+            }
+
+            #school_content {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                background: url(media/1.jpg) no-repeat #fc0;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+
+            #title_school {
+                height: 480px;
+                background: rgba(196, 196, 196, 0.35);
+                margin-top: 480px;
+            }
+
+            #title_school h1 {
+                padding: 5% 0 5% 0;
+                width: 30%;
+                margin-left: 40%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <img src="media/logotype.png" alt="" id="logo">
+                <ul>
+                    <li>Главная</li>
+                    <li>Учреждения</li>
+                    <li>Мероприятия</li>
+                    <li>Контакты</li>
+                    <li>
+                        <div id="auth">Личный кабинет</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="school_content">
+                <div id="title_school">
+                    <h1>МБУДО «Детско-юношеская спортивная школа»</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
