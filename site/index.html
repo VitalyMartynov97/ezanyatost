@@ -1,126 +1,109 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Е-Занятость</title>
-		<link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
-		<style type="text/css">
-			body{
-				background-color: rgb(196, 248, 255);
-			}
-			* {
-				font-family: 'Bellota Text', cursive;
+    <head>
+        <meta charset="utf-8">
+        <title>Главная страница</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-				padding: 0;
-				margin: 5%;
-			}
-			
-			h1, h2, h3, h4 {
-				text-indent: 1.5em;
-			}
-			
-			p {
-				text-indent: 1.5em;
-				text-align: justify;
-			}
-			
-			span {
-				text-align: justify;
-			}
-			
-			.table {
-				display: table;
-				padding: 0;
-				border-spacing: 2px;
-				height: 100%;
-			}
-			
-			.row {
-				margin: 5px;
-				display: table-row;
-			}
-			
-			.row:first-child {
-				font-size: 1.5em;
-			}
+        <style type="text/css">
+            * {
+                font-family: 'Roboto', sans-serif;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
 
-			.cell {
-				display: table-cell;
-				text-align: center;
-				background-color: #2ad;
-			}
-			
-		</style>
-	</head>
-	
-	<body>
-		<h1> 
-			Тема проекта: <span>разработка многостраничного сайта для учёта дополнительного образования в г.Муравленко</span>
-		</h1>
-		<h2>
-			Задание:<a href="./files/ТЗ.docx" download="">ТЗ.docx</a>
-		</h2>
-		
-		<h2> 
-			Cписок участников и роли:
-		</h2>
-		
-		<div class="table">
-				  <div class="row">
-					<div class="cell">Группа:</div>
-					<div class="cell">ФИО:</div>
-					<div class="cell">Роль:</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">161-321</div>
-					<div class="cell">Свирин С.</div>
-					<div class="cell">Рефакторинг серверной части</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-361</div>
-					<div class="cell">Смиянов Д.А.</div>
-					<div class="cell">Управление проектом, разработка скриптов</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-361</div>
-					<div class="cell">Букарев С.В.</div>
-					<div class="cell">Front end</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-323</div>
-					<div class="cell">Варнавин Д.В.</div>
-					<div class="cell">Написание документации, тестирование, подготовка презентационных материалов</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-323</div>
-					<div class="cell">Мартынов В.А.</div>
-					<div class="cell">Front end</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-361</div>
-					<div class="cell">Поцелуйко А.И.</div>
-					<div class="cell">Написание документации, подготовка к защите, управление внешней и внутренней коммуникацией</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-361</div>
-					<div class="cell">Расулов Г.М.</div>
-					<div class="cell">Front end</div>
-				  </div>
-				  <div class="row">
-					<div class="cell">181-361</div>
-					<div class="cell">Свобода П. Е.</div>
-					<div class="cell">Дизайн</div>
-				  </div>
-				</div>
-			</div>
-			
-			<h2>
-				Сведения о сотрудничестве с внешними партнёрами: <span>разработка для г. Муравленко</span>
-			</h2>
-			<h2>
-				Ссылки на Git-репозиторий:<a href="https://github.com/Darkraver2012/ezanyatost">E-занятость</a>
-			</h2>
-	</body>
+            body {
+                background: #fff;
+            }
 
+            #main {
+                display: grid;
+                grid-template-rows: 100px 960px auto 80px;
+            }
+
+            #header {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                left: 0px;
+                top: 0px;
+                background: #EBEBEB;
+            }
+
+            #header #logo {
+                position: absolute;
+                width: 220px;
+                height: 60px;
+                left: 100px;
+                top: 20px;
+                border-radius: 8px;
+            }
+
+            #header ul {
+                padding-top: 27px;
+                text-align: right;
+
+            }
+
+            #header ul li {
+                font-size: 24px;
+                line-height: 28px;
+                display: inline;
+                padding-left: 10px;
+            }
+
+            #auth {
+                background: #4F4F4F;
+                border: 4px solid #828282;
+                box-sizing: border-box;
+                border-radius: 6px;
+                display: inline;
+                padding: 10px;
+            }
+
+            #school_content {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                background: url(media/1.jpg) no-repeat #fc0;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+
+            #title_school {
+                height: 480px;
+                background: rgba(196, 196, 196, 0.35);
+                margin-top: 480px;
+            }
+
+            #title_school h1 {
+                padding: 5% 0 5% 0;
+                width: 30%;
+                margin-left: 40%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <img src="media/logotype.png" alt="" id="logo">
+                <ul>
+                    <li>Главная</li>
+                    <li>Учреждения</li>
+                    <li>Мероприятия</li>
+                    <li>Контакты</li>
+                    <li>
+                        <div id="auth">Личный кабинет</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="school_content">
+                <div id="title_school">
+                    <h1>МБУДО «Детско-юношеская спортивная школа»</h1>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
