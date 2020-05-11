@@ -316,6 +316,7 @@ h5 {
 .width-inner {
   /*height: 60vh;*/
 }
+
 .cImage{
   height: 60vh;
 }
@@ -331,6 +332,7 @@ h5 {
 .set-carousel{
   margin: 0;
   width: 100% !important;
+  margin-bottom: 5%;
 }
 .carousel-caption-setting h1 {
   font-size: 1.1em;
