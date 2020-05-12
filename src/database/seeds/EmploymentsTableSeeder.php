@@ -11,13 +11,15 @@ class EmploymentsTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = \App\User::where('role_id', 3)->get();
+        \App\Association::all()->each(function ($association) {
+            $teachers = \App\Teacher::where('organisation_id', $association->organisation_id)->count();
+            if ($teachers > 2) $teachers = 2;
 
-        \App\Activity::all()->each(function ($activity) use ($users) {
-            $users->random(rand(1, 2))->each(function ($user) use ($activity) {
+            \App\Teacher::where('organisation_id', $association->organisation_id)->get()
+                ->random(rand(0, $teachers))->each(function ($teacher) use ($association) {
                 $employment = \App\Employment::create([
-                    'activity_id' => $activity->id,
-                    'user_id' => $user->id,
+                    'association_id' => $association->id,
+                    'teacher_id' => $teacher->id,
                 ]);
             });
         });

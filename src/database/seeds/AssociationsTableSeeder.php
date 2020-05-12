@@ -39,13 +39,26 @@ class AssociationsTableSeeder extends Seeder
             ],
         ];
 
-        \App\Course::all()->each(function ($course) use ($associations) {
-            foreach ($associations[($course->id)-1] as $name) {
-                $association = \App\Association::create([
-                    'name' => $name,
-                    'course_id' => $course->id,
-                ]);
-            };
-        });
+//        \App\Course::all()->each(function ($course) use ($associations) {
+//            foreach ($associations[($course->id)-1] as $name) {
+//                $association = \App\Association::create([
+//                    'name' => $name,
+//                    'course_id' => $course->id,
+//                ]);
+//            };
+//        });
+
+        $organisations = \App\Organisation::count();
+        for($i = 0; $i < count($associations); ++$i) {
+            foreach ($associations[$i] as $association) {
+                \App\Organisation::all()->random(rand(1, $organisations))->each(function ($organisation) use ($association, $i) {
+                    $assoc = \App\Association::create([
+                        'name' => $association,
+                        'course_id' => $i + 1,
+                        'organisation_id' => $organisation->id,
+                    ]);
+                });
+            }
+        }
     }
 }
